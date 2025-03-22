@@ -27,9 +27,23 @@ This is a script that controls the TurtleBot to move a certain distance, then th
   robot_ip:=<ip.of.the.arm> \
   launch_rviz:=false
 - Launch MoveIt's planning server and Rviz
-```bash
+  ```bash
   ros2 launch kinova_gen3_lite_moveit_config robot.launch.py \
   robot_ip:=<ip.of.the.arm>
-```
+  ```
 ## 2. Build a package in ros2 workspace
-- 
+- Working in a custom ROS2 workspace, and create a package.
+  ```bash
+  mkdir -p ~/<your ros2 workspace>/src
+  cd ~/<your ros2 workspace>
+  colcon build
+- Clone the GitHub Project
+- Build the Workspace
+  ```bash
+  cd ~/ros2_ws
+  colcon build
+- Run the Scripts
+  ```bash
+  cd ~/ros2_ws/src/YOUR_REPO_NAME
+  chmod +x run_robot.sh
+  ./run_robot.sh
