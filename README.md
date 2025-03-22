@@ -3,12 +3,12 @@ This is a script that controls the TurtleBot to move a certain distance, then th
 
 ## 🚀 Features
 
-- Turtlebot moving forward certain distance, wait and moving backwards.
-- Kinova grab a cube on the table and put it on turtlebot.
-- TurtleBot navigation in a maze.
+- Turtlebot moving forward certain distance, wait and moving backwards using .py.
+- Kinova grab a cube on the table and put it on turtlebot using setting points provided by csv file.
+- TurtleBot navigation in a maze using .py file.
 
 ## 📦 How to use
-1. Connecting to the turtlebot and Kinova
+## 1. Connecting to the turtlebot and Kinova
 - Connect laptop with turtlebot using the following command:
   ```bash
   ssh <username>@<ip_address>
@@ -23,12 +23,13 @@ This is a script that controls the TurtleBot to move a certain distance, then th
   
 - Connect your laptop's ROS environment to the robot arm:
   ```bash
- ros2 launch kortex_bringup gen3_lite.launch.py \
- robot_ip:=<ip.of.the.arm> \
- launch_rviz:=false
+  ros2 launch kortex_bringup gen3_lite.launch.py \
+  robot_ip:=<ip.of.the.arm> \
+  launch_rviz:=false
 - Launch MoveIt's planning server and Rviz
 ```bash
-ros2 launch kinova_gen3_lite_moveit_config robot.launch.py \
-robot_ip:=<ip.of.the.arm>
-
-  2. Build a package in ros2 workspace
+  ros2 launch kinova_gen3_lite_moveit_config robot.launch.py \
+  robot_ip:=<ip.of.the.arm>
+```
+## 2. Build a package in ros2 workspace
+- 
