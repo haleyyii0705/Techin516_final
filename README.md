@@ -8,8 +8,27 @@ This is a script that controls the TurtleBot to move a certain distance, then th
 - TurtleBot navigation in a maze.
 
 ## 📦 How to use
-
+1. Connecting to the turtlebot and Kinova
 - Connect laptop with turtlebot using the following command:
+  ```bash
   ssh <username>@<ip_address>
 - Edit .bashrc file of turtlebot to include following the line if needed
-  export ROS_DOMAIN_ID=30
+  ```export ROS_DOMAIN_ID=30```
+- On you laptop, start the discovery server with:
+  ```bash
+  ssh <username>@<ip_address
+- Start the bringup launch file on the Turtlebot:
+  ```bash
+  ros2 launch turtlebot3_bringup robot.launch.py
+  
+- Connect your laptop's ROS environment to the robot arm:
+  ```bash
+ ros2 launch kortex_bringup gen3_lite.launch.py \
+ robot_ip:=<ip.of.the.arm> \
+ launch_rviz:=false
+- Launch MoveIt's planning server and Rviz
+```bash
+ros2 launch kinova_gen3_lite_moveit_config robot.launch.py \
+robot_ip:=<ip.of.the.arm>
+
+  2. Build a package in ros2 workspace
